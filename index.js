@@ -78,18 +78,53 @@ function Tich() {
 function div() {
   var number = document.getElementById("div").value;
   number = parseInt(number);
-  var p1 = '<div class="red_form">div'
-  var p2 = '<div class="blue_form">div'
+  var p1 = '<div class="red_form">div';
+  var p2 = '<div class="blue_form">div';
   var html = " ";
   for (var i = 1; i <= number; i++) {
-    
-    if (i %2 ==0){
+    if (i % 2 == 0) {
       html += p1 + i + "</div> <br/>";
-    }
-    else{
+    } else {
       html += p2 + i + "</div> <br/>";
     }
-   
   }
   document.getElementById("form_div").innerHTML = html;
+}
+/**
+ * INPUT:
+ * - user nhập 1 số x bất kì x;
+
+ * PROCESS:
+ * 
+ * b1: nếu =1 không phải là số nguyên tố 
+ * b2: bằng chia hết cho 2 và chính nó là số nguyên tố
+ 
+ * OUTPUT:
+ * - in ra kết quả
+ */
+
+function snt() {
+  var n = document.getElementById("snt").value;
+  var flag = true;
+
+  if (n < 2) {
+    flag = false;
+  } else if (n == 2) {
+    flag = true;
+  } else if (n % 2 == 0) {
+    flag = false;
+  } else {
+    for (var i = 3; i < n - 1; i += 2) {
+      if (n % i == 0) {
+        flag = false;
+        break;
+      }
+    }
+  }
+  if (flag == true) {
+    document.getElementById("output").innerHTML = n + " là số nguyên tố ";
+  } else {
+    document.getElementById("output").innerHTML =
+      n + " không phải là số nguyên tố ";
+  }
 }

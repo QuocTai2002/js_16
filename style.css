@@ -36,6 +36,7 @@ html {
     padding: 0;
     color: #fff;
     text-align: center;
+
   }
   .login-box span.red{
     color: red;
@@ -59,6 +60,7 @@ html {
     border-bottom: 1px solid #fff;
     outline: none;
     background: transparent;
+    
   }
   .login-box .user-box label {
     position: absolute;
